@@ -1,6 +1,6 @@
 {
   "name": "youtube-music-ts-api-fetch",
-  "version": "1.9",
+  "version": "1.9.0",
   "description": "ytmusic api, but with fetch for cloudflare workers",
   "main": "build/exports.js",
   "types": "build/exports.d.ts",
