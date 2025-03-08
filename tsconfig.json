@@ -1,18 +1,13 @@
 {
-    "compilerOptions": {
-        "declaration": true,
-        "declarationDir": "./build-dts",
-        "esModuleInterop": true,
-        "module": "commonjs",
-        "newLine": "LF",
-        "sourceMap": true,
-        "target": "es6"
-    },
-    "include": [
-      "src/**/*.ts"
-    ],
-    "exclude": [
-      "src/**/*.d.ts",
-      "src/**/*.spec.ts"
-    ]
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./build-dts",
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "newLine": "LF",
+    "sourceMap": true,
+    "target": "es6"
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/**/*.d.ts", "src/**/*.spec.ts"]
 }

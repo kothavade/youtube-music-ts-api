@@ -1,7 +1,7 @@
 {
-  "name": "youtube-music-ts-api",
-  "version": "1.8.3",
-  "description": "An unofficial YouTube Music API written in TypeScript for easy integration into your projects",
+  "name": "youtube-music-ts-api-fetch",
+  "version": "1.9",
+  "description": "ytmusic api, but with fetch for cloudflare workers",
   "main": "build/exports.js",
   "types": "build/exports.d.ts",
   "files": [
@@ -27,36 +27,27 @@
   },
   "homepage": "https://github.com/nickp10/youtube-music-ts-api#readme",
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
-    "build-debug": "webpack --config webpack.dev.js",
-    "build-docs": "rimraf temp-docs && typedoc src/interfaces-primary.ts src/interfaces-supplementary.ts && concat-md --ignore _media,modules.md,README.md temp-docs > DOCUMENTATION.md && rimraf temp-docs",
+    "build:js": "esbuild --bundle --platform=node --target=node18 --format=cjs --outdir=build --external:sha1 src/exports.ts",
+    "build:types": "tsc --declaration src/exports.ts --emitDeclarationOnly --outDir build",
+    "build": "npm run build:js",
     "prepare": "npm run build",
     "test": "mocha -r ts-node/register -r source-map-support/register src/**/*.spec.ts",
     "test-coverage": "nyc npm run test"
   },
   "devDependencies": {
-    "@babel/core": "^7.26.7",
-    "@babel/preset-env": "^7.26.7",
     "@types/mocha": "^10.0.10",
     "@types/node": "^22.13.0",
     "@types/sha1": "^1.1.5",
     "babel-loader": "^9.2.1",
     "concat-md": "^0.5.1",
-    "dts-bundle-webpack": "^1.0.2",
+    "esbuild": "^0.25.0",
     "mocha": "^11.1.0",
     "nyc": "^17.1.0",
-    "rimraf": "^6.0.1",
-    "source-map-support": "^0.5.21",
-    "ts-loader": "^9.5.2",
-    "ts-node": "^10.9.2",
-    "typedoc": "^0.27.6",
-    "typedoc-plugin-markdown": "^4.4.1",
-    "typescript": "^5.7.3",
-    "webpack": "^5.97.1",
-    "webpack-cli": "^6.0.1",
-    "webpack-merge": "^6.0.1"
+    "rimraf": "^6.0.1"
   },
   "dependencies": {
-    "sha1": "^1.1.1"
+    "sha1": "^1.1.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
   }
 }

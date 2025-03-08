@@ -1,7 +1,0 @@
-{
-    "gitRevision": "master",
-    "hideBreadcrumbs": "true",
-    "out": "temp-docs",
-    "plugin": "typedoc-plugin-markdown",
-    "theme": "default"
-}
